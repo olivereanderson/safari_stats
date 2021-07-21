@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "session-synthesiser",
+    "camera-stats",
+    "user-stats",
+    "common-utils",
+]
+
