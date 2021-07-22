@@ -31,7 +31,8 @@ user_id|session_id1:nb_pics1,session_id2:nb_pics2, ... , session_id10:nb_pics10
 ``` 
 where nb_pics is the number of pictures taken by the corresponding user in the given session. 
 
-
+# Constraints: 
+We may not use a database and our programs should ideally consume a maximum of 1 GB RAM at any given time.  
 
 # Included applications: 
 There are three CLI tools contained in this collection. 
