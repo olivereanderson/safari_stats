@@ -22,6 +22,8 @@ The output must be a text file "camera_top100_YYYYMMDD.txt" where each row is of
 camera_id|session_id1:avg_pics1,session_id2:avg_pics2, ... , session_id100:avg_pics100
 ```
 where avg_pics is the average number of pics by the given camera type in the corresponding session. 
+
+
 2. Also at the end of each day: Provide an overview of the top ten number of pictures in sessions by users. 
 The output must be a text file "user_top_10_YYYYMMDD.txt" where each row is of the form: 
 ```
