@@ -37,7 +37,7 @@ where nb_pics is the number of pictures taken by the corresponding user in the g
 There are three CLI tools contained in this collection. 
 
 * camera-stats: Yields the top 100 average number of pictures by each camera over the last seven days. 
-* user-stats: Yields the top 10 number of pictures in sessions over the last seven days fro each user. 
+* user-stats: Yields the top 10 number of pictures in sessions over the last seven days for each user. 
 * Session-synthesiser: Generate session log files that can be used to test the two aforementioned programs. 
 
 # Building 
