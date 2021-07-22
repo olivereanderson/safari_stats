@@ -1,6 +1,6 @@
 **SAFARI_Stats**: A collection of CLI tools related to log file processing from an imagined popular safari app.
 
-This is essentially my solution to a take home test I once had to do for a software engineering position which I received positive feedback on. I have done my utmost to rewrite the context and rename everything in order for the company who gave me the test to be reuse it. Apart from renaming variables and functions the code presented here is the same as my original submission. 
+This is essentially my solution to a take home test I once had to do for a software engineering position which I received positive feedback on. I have done my utmost to rewrite the context and rename everything in order for the company who gave me the test to be able to reuse it. Apart from renaming variables and functions the code presented here is the same as my original submission. 
 
 # Context:
 Consider the following imaginary app: Users can participate in Safari *sessions*, which means finding 10 users in the vicinity that are split into two equally sized teams. Each session consists of several *trips* into a location nearby containing animals. The goal of each trip is to be the first team to take five pictures of animals (in total) before the other team (if both teams get their fifth picture simultaneously it is considered a draw). A trip can only last fifteen minutes and whichever team with the most pictures wins the trip. 
