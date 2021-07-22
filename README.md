@@ -9,7 +9,7 @@ At the start of each trip every player has to rent a *camera* from a certified s
 
 At the end of each trip the participants upload the id of the camera they used together with how many pictures they took this trip. 
 
-We assume that our server contains a folder that receives a text file names "safari-sessions-YYYYMMDD.log" at the end of each day. The rows of this file are of the following format 
+We assume that our server contains a folder that receives a text file named "safari-sessions-YYYYMMDD.log" at the end of each day. The rows of this file are of the following format 
 ```
 user_id: The id of a user , session_id: The id of a session, camera_id: The id of a camera, nb_pics: The corresponding number of pictures taken in the given trip.
 ```
