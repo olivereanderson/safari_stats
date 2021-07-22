@@ -6,7 +6,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use crate::parsing::{UserMatchRecord, UserRecord};
+use crate::parsing::{UserSessionRecord, UserRecord};
 use anyhow::{Context, Result};
 use common_utils::parsing_utils::Record;
 
@@ -44,12 +44,12 @@ pub(crate) fn from_log_file_to_batched_fst_maps<P: AsRef<Path>>(
         .filter_map(Result::ok)
         .map_into::<UserRecord>()
         .map(|record| record.split());
-    let mut batch_vector: Vec<(UserMatchRecord, u8)> = Vec::with_capacity(capacity_limit);
+    let mut batch_vector: Vec<(UserSessionRecord, u8)> = Vec::with_capacity(capacity_limit);
     let mut batch_counter = 0;
     for pair in records_iter {
         if batch_vector.len() >= capacity_limit {
             crate::sorting::sort_collect_splitted_user_records(&mut batch_vector);
-            // If there were multiple entries with equal UserMatchRecord then the vector's length
+            // If there were multiple entries with equal UserSessionRecord then the vector's length
             // will have decreased. If the decrease was not sufficient we save our progress to a temporary fst map and clear the vector.
             if batch_vector.len()
                 >= (max_capacity_ratio_after_sort_collect * (capacity_limit as f64)) as usize
@@ -84,7 +84,7 @@ pub(crate) fn from_log_file_to_batched_fst_maps<P: AsRef<Path>>(
 // and values correpond to the sum of pics.
 fn write_batch_fst_map<P: AsRef<Path>>(
     path: P,
-    batch_vector: &mut Vec<(UserMatchRecord, u8)>,
+    batch_vector: &mut Vec<(UserSessionRecord, u8)>,
 ) -> Result<()> {
     let wtr = BufWriter::new(
         File::create(&path)
@@ -111,7 +111,7 @@ fn write_batch_fst_map<P: AsRef<Path>>(
 }
 
 // converts a UserMatchRecord into keys for the temporary fst's.
-fn user_session_record_batch_fst_key(user_session_record: UserMatchRecord) -> [u8; 32] {
+fn user_session_record_batch_fst_key(user_session_record: UserSessionRecord) -> [u8; 32] {
     let mut bytes = [0u8; 32];
     for (idx, byte) in user_session_record
         .user_id

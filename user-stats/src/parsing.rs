@@ -20,9 +20,9 @@ impl From<Record> for UserRecord {
 }
 
 impl UserRecord {
-    pub(crate) fn split(self) -> (UserMatchRecord, u8) {
+    pub(crate) fn split(self) -> (UserSessionRecord, u8) {
         (
-            UserMatchRecord {
+            UserSessionRecord {
                 user_id: self.user_id,
                 session_id: self.session_id,
             },
@@ -32,7 +32,7 @@ impl UserRecord {
 }
 
 #[derive(Ord, PartialOrd, Eq, PartialEq, Debug)]
-pub(crate) struct UserMatchRecord {
+pub(crate) struct UserSessionRecord {
     pub(crate) user_id: Uuid,
     pub(crate) session_id: Uuid,
 }

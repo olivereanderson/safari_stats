@@ -105,7 +105,7 @@ $ cat loads of large files > /dev/null
 in this case the Maximum resident set size was around 1GB.  
 
 ## Possibilities for improvement 
-If I had more time to work on this I would first of all have written a lot more tests. I would also have tried to improve the command line interfaces by adding progress bars (using the [indicatif crate](https://crates.io/crates/indicatif)). Furthermore I would have tried to make the user-stats package less imperative and tried to split the code up into more functions. Moreover I would have used [criterion](https://crates.io/crates/criterion) to add benchmarks so we could optimize our code to run faster in the future. Finally there are some (non performance sensitive places) where unnecessary copying has been done to quickly satisfy the borrow checker. Ideally this should also be refactored. 
+If I had more time to work on this I would first of all have written a lot more tests. I would also have tried to improve the command line interfaces by adding progress bars (using the [indicatif crate](https://crates.io/crates/indicatif)). Additionally there are a few variables that could benefit from more suitable names and some functions could be documented a bit better. Furthermore I would have tried to make the user-stats package less imperative and tried to split the code up into more functions. Moreover I would have used [criterion](https://crates.io/crates/criterion) to add benchmarks so we could optimize our code to run faster in the future. Finally there are some (non performance sensitive places) where unnecessary copying has been done to quickly satisfy the borrow checker. Ideally this should also be refactored. 
 
 
 

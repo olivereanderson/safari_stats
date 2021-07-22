@@ -108,7 +108,7 @@ pub(crate) struct CameraBestAvgPics {
     // the ids of the top 100 sessions.
     #[serde(with = "BigArray")]
     pub(crate) sessions: [Uuid; 100],
-    // sorted array of the top 100 avg pics by the opperator in sessions.
+    // sorted array of the top 100 avg pics by the camera in sessions.
     // We require that avg_pics[i] was the average number of pics by the camera in sessions[i] for all i.
     // This relationship between the two arrays would be made clearer if we used a hashmap instead, but
     // since this data structure is intended to be mutated very many times, the use of a hashmap would lead to
